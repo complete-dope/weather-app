@@ -6,6 +6,8 @@ const forecastList = require("./utils/forecast.js");
 // we call it to create a new express server
 
 const app =express();
+const port = process.env.PORT || 5000
+
 const viewsPath = path.join(__dirname  ,"../templates/views" )
 const publicDirectoryPath = path.join(__dirname , '../public')
 const partialsPath = path.join(__dirname , '../templates/partials')
@@ -108,6 +110,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(5000 ,()=>{
-    console.log("server is up at port " + 5000);
+app.listen(port ,()=>{
+    console.log("server is up at port " + port);
 });
